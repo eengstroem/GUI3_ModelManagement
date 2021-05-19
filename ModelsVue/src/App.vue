@@ -1,15 +1,28 @@
 <template>
     <div id="app">
-        <Home msg="Hello world!" />
+        <Login></Login>
+        <Manager></Manager>
     </div>
 </template>
 
 <script>
-    import Home from './components/Home.vue';
+    import store from './Store/store.js';
+    import Login from './components/LoginComponent.vue';
+    import Manager from './components/ManagerComponent.vue'
     export default {
         name: 'app',
+        store,
         components: {
-            Home
+            Login,
+            Manager
+        },
+        data: () => ({
+            hompage: true
+        }),
+        methods: {
+            changeState(){
+                this.homepage = false;
+            }
         }
     };
 </script>
